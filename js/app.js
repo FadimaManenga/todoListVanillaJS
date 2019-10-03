@@ -1,7 +1,7 @@
 function createTodo(todoText) {
 
     // DECLARATION DOM
-    
+
     // const divTodo = document.createElement('div');
     const divTodo = document.createElement('div'); 
     const divPrepend = document.createElement('div');
@@ -47,4 +47,28 @@ function createTodo(todoText) {
     btnDelete.onclick = deleteTodo.bind(divTodo, inputCheckbox);
 
     document.querySelector('.todoList').appendChild(divTodo);
+}
+// addTodo()
+const form = document.formAddTodo;
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault(); // empêche le navigateur de faire 1 appel serveur
+    const todo3 = form.AddTodo.value;
+    if (todo3.length > 0) {
+        createTodo(todo3.trim());
+        form.reset();
+    }
+});
+
+// deleteTodo()
+function deleteTodo(inputCheckbox) {
+    let remove = true;
+
+    if (!inputCheckbox.checked) {
+
+        remove = confirm('La tâche est en cours, \nVoulez-vous vraiment la supprimer ?');
+    }
+
+    if (remove) this.parentElement.removeChild(this);
+
 }
