@@ -1,7 +1,5 @@
 function createTodo(todoText) {
-
     // DECLARATION DOM
-
     // const divTodo = document.createElement('div');
     const divTodo = document.createElement('div'); 
     const divPrepend = document.createElement('div');
@@ -48,6 +46,7 @@ function createTodo(todoText) {
 
     document.querySelector('.todoList').appendChild(divTodo);
 }
+
 // addTodo()
 const form = document.formAddTodo;
 
